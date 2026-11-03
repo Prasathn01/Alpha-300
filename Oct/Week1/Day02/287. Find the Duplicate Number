@@ -1,0 +1,15 @@
+class Solution:
+    def findDuplicate(self, nums: list[int]) -> int:
+        seen = set()
+        final_list = []
+        for num in nums:
+            if num in seen:
+                if num not in final_list:
+                    final_list.append(num)    
+            else:
+                seen.add(num)
+        for num in final_list:
+            return num
+
+
+        
