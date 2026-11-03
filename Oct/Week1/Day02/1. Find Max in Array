@@ -1,0 +1,7 @@
+class Solution:
+    def largestElement(self, nums: list[int]) -> int:
+        greatest = float('-inf')
+        for num in nums:
+            if num > greatest:
+                greatest = num
+        return greatest
