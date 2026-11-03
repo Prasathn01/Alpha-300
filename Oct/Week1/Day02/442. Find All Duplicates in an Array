@@ -1,0 +1,13 @@
+class Solution:
+    def findDuplicates(self, nums: list[int]) -> list[int]:
+        seen = {}
+        final_list = []
+
+        for num in nums:
+            if num in seen:
+                if num not in final_list:
+                    final_list.append(num)
+            else:
+                seen[num] = True
+        return final_list
+            
