@@ -11,6 +11,16 @@ class Solution:
                         greatest_profit = profit
         return greatest_profit
 
+#optimal approach
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        cheapest = float("inf")
+        greatest_profit = 0
 
-
-        
+        for price in prices:
+            if price < cheapest:
+                cheapest = price
+            profit = price - cheapest
+            if profit > greatest_profit:
+                greatest_profit = profit
+        return greatest_profit 
