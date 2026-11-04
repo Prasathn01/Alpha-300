@@ -1,0 +1,16 @@
+class Solution:
+    def majorityElement(self, nums: list[int]) -> int:
+        dic = {}
+        for i in range(len(nums)):
+            if nums[i] in dic:
+                dic[nums[i]] = dic[nums[i]] + 1
+            else:
+                dic[nums[i]] = 1
+        final_count = 0 
+        best_num = 0
+        for num, count in dic.items():
+            if count > final_count:
+                final_count = count
+                best_num = num
+        return best_num
+            
