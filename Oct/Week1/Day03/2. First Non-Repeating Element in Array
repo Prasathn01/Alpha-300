@@ -1,0 +1,16 @@
+class Solution:
+    def firstNonRepeating(self, arr): 
+        # code here
+        dic = {}
+        for num in arr:
+            if num in dic:
+                dic[num] = dic[num] + 1 
+            else:
+                dic[num] = 1
+            
+        for num, count in dic.items():
+            if count == 1:
+                return num
+        return 0    
+            
+            
