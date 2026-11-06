@@ -1,0 +1,7 @@
+_setup/
+LLM_PUSH_GUIDE.md
+CLAUDE.md
+AGENTS.md
+.venv/
+__pycache__/
+*.pyc
