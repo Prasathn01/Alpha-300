@@ -2,7 +2,7 @@
 
 ## Problems Solved
 1. **680. Valid Palindrome II**
-2. **[Problem Number]. [Problem Title]**
+2. **409. Longest Palindrome**
 3. **[Problem Number]. [Problem Title]**
 
 ---
@@ -22,8 +22,8 @@
 
 ---
 
-## Problem 2: [Problem Title]
-**LeetCode:** [Link](https://leetcode.com/problems/)
+## Problem 2: Longest Palindrome
+**LeetCode:** [409. Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
 
 ### Approach
 *Add your approach here (2-3 lines)*
