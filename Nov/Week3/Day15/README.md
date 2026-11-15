@@ -3,7 +3,7 @@
 ## Problems Solved
 1. **28. Find the Index of the First Occurrence in a String**
 2. **459. Repeated Substring Pattern**
-3. **[Problem Number]. [Problem Title]**
+3. **796. Rotate String**
 
 ---
 
@@ -77,17 +77,37 @@ class Solution:
 
 ---
 
-## Problem 3: [Problem Title]
-**LeetCode:** [Link](https://leetcode.com/problems/)
+## Problem 3: Rotate String
+**LeetCode:** [796. Rotate String](https://leetcode.com/problems/rotate-string/)
 
 ### Approach
-*Add your approach here (2-3 lines)*
+Check if lengths match first. Then iterate through all possible rotation points, creating each rotated version by slicing at position and concatenating the parts. Compare each rotation with goal string.
 
 ### Complexity
-- **Time:** O()
-- **Space:** O()
+- **Time:** O(n²) where n = len(s), creating n rotations of O(n) each
+- **Space:** O(n) for storing rotated strings
 
 ### Edge Cases
-*Add edge cases you learned from here*
+- Different string lengths return False immediately
+- Single character: True only if s == goal
+- Both strings same returns True (0 rotations)
+
+### Solution
+```python
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+        #make sure both is equal so we use this if statement
+        if len(s) != len(goal):
+            return False
+
+        right = len(s)
+
+        for left in range(right):
+            rotated = s[left:right] + s[:left]
+            if rotated == goal:
+                return True
+
+        return False
+```
 
 ---
