@@ -2,7 +2,7 @@
 
 ## Problems Solved
 1. **28. Find the Index of the First Occurrence in a String**
-2. **[Problem Number]. [Problem Title]**
+2. **459. Repeated Substring Pattern**
 3. **[Problem Number]. [Problem Title]**
 
 ---
@@ -44,18 +44,36 @@ class Solution:
 
 ---
 
-## Problem 2: [Problem Title]
-**LeetCode:** [Link](https://leetcode.com/problems/)
+## Problem 2: Repeated Substring Pattern
+**LeetCode:** [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
 
 ### Approach
-*Add your approach here (2-3 lines)*
+Check all possible divisors of string length. For each valid divisor k, verify if the first k characters repeat throughout the entire string by comparing each character with the character k positions before it.
 
 ### Complexity
-- **Time:** O()
-- **Space:** O()
+- **Time:** O(n²) where n = len(s), checking each divisor and verifying pattern
+- **Space:** O(1)
 
 ### Edge Cases
-*Add edge cases you learned from here*
+- String length 1 returns False
+- String length 2 with same characters returns True (only if both are same)
+- All characters same returns True
+
+### Solution
+```python
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        n = len(s)
+        for k in range(1, n//2 + 1):
+            if n % k != 0:
+                continue
+            for i in range(k, n):
+                if s[i] != s[i - k]:
+                    break
+            else:
+                return True
+        return False
+```
 
 ---
 
